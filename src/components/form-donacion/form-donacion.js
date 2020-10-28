@@ -2,7 +2,14 @@ import React, { Fragment, useContext, useState } from 'react';
 import './form-donacion.css';
 import { ProvinciesContext } from '../../contexts/ProvincesContext'
 
+/*
 
+Algunos errores:
+el class de html se debe de cambiar por className
+cuando haces un {element.map( ()=> ())} lo que devolves va entre () porque devolves html
+En general estuvo bien pensado todo solo que la falta de practica genera problemitas pero ya anda todo perfecto
+El context y el useContext es siempre igual en todos los casos asi que la proxima podes copiar y pegar. Es facil react pero cuesta jaja
+*/
 const FormDonacion = ({ title }) => {
 
     // importamos el contexto, no el provider. El provider es para especificar quienes tiene acceso.

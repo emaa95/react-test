@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useState } from 'react';
 import './form-donacion.css';
-import { ProvinciesContext } from '../../contexts/ProvincesContext'
+import { ProvinciesContext } from '../../contexts/ProvincesContext';
+import { NeighborhoodContext } from '../../contexts/ NeighborhoodContext';
 
 /*
 
@@ -14,6 +15,8 @@ const FormDonacion = ({ title }) => {
 
     // importamos el contexto, no el provider. El provider es para especificar quienes tiene acceso.
     const { provincies } = useContext(ProvinciesContext);
+
+    const { neighborhoods } = useContext(NeighborhoodContext);
 
     const [persona, setPersona] = useState({
         name: '',
@@ -108,11 +111,12 @@ const FormDonacion = ({ title }) => {
 
                 <label>Barrio</label>
                 <select className="form-control input-form">
-                    <option>Cofico</option>
-                    <option>Villa Cabrera</option>
-                    <option>Nueva Córdoba</option>
-                    <option>Alta Córdoba</option>
-                    <option>Alberdi</option>
+                   <option>--Seleccione una opción--
+                   </option>
+                   {neighborhoods.map(neighborhood => (
+                        <option key={neighborhood.id}>{neighborhood.nombre}</option>
+                    ))}
+
                 </select>
 
                 <label>Dirección</label>

@@ -5,7 +5,7 @@ import axios from 'axios';
 export const ProvinciesContext = createContext();
 
 const ProvinciesProvider = (props) => {
-
+   
     const [provincies, setProvincies] = useState([]);
 
     // useEffect es una funcion, solo hace falta llamarla
